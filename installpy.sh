@@ -76,10 +76,21 @@ fi
 # Install the Twilio Python library
 pip install twilio
 
+# Install Tkinter 
+sudo apt install -y python3-tk
+
+# pip install Image
+# Install ImageTK
+sudo apt install python3-pil.imagetk
+
+####################################### SSH Install ######################################################
+sudo apt install -y ssh
 # Check if the installation was successful
 if [ $? -eq 0 ]; then
     echo "Twilio Python library has been successfully installed."
 else
     echo "Error: Twilio Python library installation failed."
 fi
+
+
 exit 0
