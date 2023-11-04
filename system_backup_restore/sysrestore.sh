@@ -1,11 +1,11 @@
 #!/bin/bash
 
 restore_snapshot() {
-  # Check if Timeshift is installed
-  if ! command -v timeshift &>/dev/null; then
-    echo "Timeshift is not installed. Please install it first."
-    exit 1
-  fi
+#   # Check if Timeshift is installed
+#   if ! command -v timeshift &>/dev/null; then
+#     echo "Timeshift is not installed. Please install it first."
+#     exit 1
+#   fi
 
   # List available snapshots
   sudo timeshift --list
