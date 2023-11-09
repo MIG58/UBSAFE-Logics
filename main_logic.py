@@ -1,4 +1,5 @@
 from twilio.base.exceptions import TwilioRestException
+import time
 
 # Local Imports
 from email_notif.mail import send_mail
@@ -36,10 +37,12 @@ def lockssh(x):
 
 
 def usb_lock():
-    busb()
+    busb() # After block make sure to reboot to perform unblock
+    # time.sleep(20) # 20 Sec
+    ubusb() # After unblock make sure to reboot and plugin device then press unblock button
 
 
-usb_lock()
+# usb_lock()
 # --------------------------------------------WORKING LOGIC CODES---------------------------------------------
 
 # SSH SYSTEM IS WORKING AS BASIC MASK & UNMASK
