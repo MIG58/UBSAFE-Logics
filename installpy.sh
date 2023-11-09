@@ -83,6 +83,10 @@ sudo apt install -y python3-tk
 # Install ImageTK
 sudo apt install python3-pil.imagetk
 
+# PyQt5 Install
+sudo apt install python3-pyqt5
+
+
 ####################################### SSH Install ######################################################
 sudo apt install -y ssh
 # Check if the installation was successful
@@ -91,6 +95,7 @@ if [ $? -eq 0 ]; then
 else
     echo "Error: Twilio Python library installation failed."
 fi
+####################################### V check ######################################################
 
 
 exit 0
