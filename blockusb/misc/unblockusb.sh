@@ -5,6 +5,7 @@ if [ "$(id -u)" != "0" ]; then
     echo "Please run this script with sudo."
     exit 1
 fi
+sudo systemctl stop usbguard.service
 
 # Define the USBGuard rule file
 RULES_FILE="/etc/usbguard/rules.conf"
@@ -19,6 +20,6 @@ allow device
 EOL
 
 # Reload USBGuard rules
-systemctl restart usbguard
+sudo systemctl start usbguard.service
 
 echo "All USB devices are now allowed. Please reboot your system for the changes to take effect."
