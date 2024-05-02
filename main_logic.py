@@ -6,23 +6,17 @@ from email_notif.mail import send_mail
 from message.sms_notif import sms_alert
 from sshlock.blockSSH import *
 from blockusb.blockusb import *
+from system_backup_restore.sysBackupRestore import *
+from tor_lock.torLock import *
+from firewall_setup.firewall import *
 
-# reciever_mail = 'ksuman2004.sr@gmail.com'
-# reciever_mail = 'abhiraj123sardar@gmail.com'
-
-# msg = "Mail System is working ," ; tmail = "abhiraj123sardar@gmail.com" ; p = "Abhiraj Deshapriya Fuckboy"
-# msg = "Mail System is working ," ; tmail = "ksuman2004.sr@gmail.com" ; p = "Suman Howrah Fuckboy"
+# msg = "Mail System is working ," ; tmail = "abhiraj123sardar@gmail.com" ; p = "Abhiraj"
 # msg = "Mail System is working ," ; tmail = "michaelg17801@gmail.com" ; p = "Michael"
 
 
 def mailalert(pname, tmail, msg,):  # Outer Format PersonName,Target_Mail,Message
     # Inner Format Message, Target mail, Person_Name
     send_mail(msg, tmail, pname)
-
-# tphone1="+919330668959"
-# tphone2="+918697499539"
-# tphone="+91916349756"
-# msg2="SMS system is working";
 
 
 def smsalert(msg2, tphone):
@@ -37,24 +31,43 @@ def lockssh(x):
 
 
 def usb_lock():
-    busb() # After block make sure to reboot to perform unblock
+    busb()  # After block make sure to reboot to perform unblock
     # time.sleep(20) # 20 Sec
-    ubusb() # After unblock make sure to reboot and plugin device then press unblock button
+    ubusb()  # After unblock make sure to reboot and plugin device then press unblock button
 
 
-# usb_lock()
+def sysBackupRestore(x):
+    if (x):
+        sysbackup()
+    else:
+        sysrestore()
+
+
+def firewall():
+    fwall()
+
+
 # --------------------------------------------WORKING LOGIC CODES---------------------------------------------
 
 # SSH SYSTEM IS WORKING AS BASIC MASK & UNMASK
-# lockssh(1)
+lockssh(1)
 
 # MAIL-ALERT SYSTEM IS WORKING
 # pname = "Michael" ; tmail = "michaelg17801@gmail.com" ; msg = "Mail System is working ," ;
-# mailalert(pname,tmail,msg,)
+mailalert(pname,tmail,msg,)
 
 # SMS-ALERT SYSTEM IS WORKING
 # tphone="+919163439756"; msg2="SMS system is working";
-# smsalert(msg2,tphone)
+smsalert(msg2,tphone)
 
+# USB Block is Working
+usb_lock()
 
-# alias sS='sudo systemctl status ssh'
+# System Backup & Restore Working
+sysBackupRestore(1)
+
+# Only Lock Tor (No Unblock) Working
+tor_lock()
+
+# Default Firewall setup Working
+fwall()

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Support Termination File
 
 # USBGuard rule file
 RULES_FILE="/etc/usbguard/rules.conf"
